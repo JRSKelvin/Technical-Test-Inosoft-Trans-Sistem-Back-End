@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Middleware\EnsureTokenIsValid;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/kendaraan', [KendaraanController::class, 'index'])->middleware([EnsureTokenIsValid::class]);
+Route::get('/penjualan', [PenjualanController::class, 'index'])->middleware([EnsureTokenIsValid::class]);
+Route::resource('/kendaraan', KendaraanController::class)->middleware([EnsureTokenIsValid::class]);
+Route::resource('/penjualan', PenjualanController::class)->middleware([EnsureTokenIsValid::class]);
