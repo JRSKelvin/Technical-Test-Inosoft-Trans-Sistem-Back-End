@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Middleware\EnsureTokenIsValid;
@@ -20,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/register', [AuthController::class, 'register']);
 Route::get('/kendaraan', [KendaraanController::class, 'index'])->middleware([EnsureTokenIsValid::class]);
 Route::get('/penjualan', [PenjualanController::class, 'index'])->middleware([EnsureTokenIsValid::class]);
 Route::resource('/kendaraan', KendaraanController::class)->middleware([EnsureTokenIsValid::class]);
