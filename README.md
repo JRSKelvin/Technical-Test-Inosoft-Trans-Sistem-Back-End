@@ -108,3 +108,9 @@ composer install
 ```
 php artisan serve
 ```
+
+7. Run script below to show all available endpoints.
+
+```
+php artisan route:list
+```
