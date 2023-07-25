@@ -62,3 +62,49 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Built With And Requirement
+
+- PHP 7
+- Laravel 8
+- MongoDB
+- Composer
+
+## Getting Started And Basic Installation (Database)
+
+1. Sign in or create a MongoDB account.
+2. Create an instance and a cluster in MongoDB.
+3. After having a cluster, enter the cluster and activate it.
+4. After the cluster is active, create a database with any name.
+5. After creating the database, you may proceed to the application.
+
+## Getting Started And Basic Installation (App)
+
+1. Clone the repository to our machine.
+2. Move to repository folder.
+3. Copy `.env.example` file and rename to `.env`.
+4. Fill required variables and configure database.
+
+```
+DB_CONNECTION=mysql
+
+MONGO_DB_HOST=127.0.0.1
+MONGO_DB_PORT=27017
+MONGO_DB_DATABASE=laravel
+MONGO_DB_USERNAME=
+MONGO_DB_PASSWORD=
+
+JWT_SECRET=
+```
+
+5. Run script below.
+
+```
+composer install
+```
+
+6. Run script below or you may use Laravel Valet or XAMPP to run locally.
+
+```
+php artisan serve
+```
